@@ -8,14 +8,16 @@
      <th>築年数</th>
      <th>備考</th>
   </tr>
-  <tr>
     <% @house.each do |house| %>
-      <td><%= house.building %></td>
-      <td><%= house.money %>円</td>
-      <td><%= house.address %></td>
-      <td><%= house.years %>年</td>
-      <td><%= house.other %></td>
-      <td><%= link_to '編集', edit_house_path(house.id) %></td>
+      <tr>
+        <td><%= house.building %></td>
+        <td><%= house.money %>円</td>
+        <td><%= house.address %></td>
+        <td><%= house.years %>年</td>
+        <td><%= house.other %></td>
+        <td><%= link_to '編集', edit_house_path(house.id) %></td>
+        <td><%= link_to '削除', house_path(house.id), method: :delete %></td>
+      </tr>
     <% end %>
 </table>
 

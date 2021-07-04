@@ -19,10 +19,15 @@ class HousesController < ApplicationController
   def update
     @house = House.find(params[:id])
     if @house.update(house_params)
-      redirect_to houses_path, notice: "更新しました"
+      redirect_to houses_path
     else
       render :edit
     end
+  end
+  def destroy
+    @house = House.find(params[:id])
+    @house.destroy
+    redirect_to houses_path
   end
   private
   def house_params
