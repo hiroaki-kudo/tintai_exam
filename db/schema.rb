@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_07_04_140844) do
 
   create_table "houses", force: :cascade do |t|
     t.string "building"
+    t.text "money"
     t.string "address"
     t.text "years"
     t.string "other"

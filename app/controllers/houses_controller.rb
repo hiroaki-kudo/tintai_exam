@@ -3,6 +3,6 @@ class HousesController < ApplicationController
     @house = House.all
   end
   def new
-    # @house = House.new
+    @house = House.new
   end
 end
