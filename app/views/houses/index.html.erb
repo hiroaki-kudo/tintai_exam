@@ -3,6 +3,7 @@
 <table>
   <tr>
      <th>物件名</th>
+     <th>賃料</th>
      <th>住所</th>
      <th>築年数</th>
      <th>備考</th>
@@ -10,6 +11,7 @@
   <tr>
     <% @house.each do |house| %>
       <td><%= house.building %></td>
+      <td><%= house.money %></td>
       <td><%= house.address %></td>
       <td><%= house.years %></td>
       <td><%= house.other %></td>

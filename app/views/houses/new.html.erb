@@ -2,19 +2,23 @@
 
 <%= form_with(model:@houses, local:true) do |house| %>
   <div class= "house_building">
-    <%= house.label :物件名 %>
+    <p><%= house.label :物件名 %></p>
     <%= house.text_field :building %>
   </div>
+  <div class= "house_money">
+    <p><%= house.label :賃料 %></p>
+    <%= house.text_field :money %>円
+  </div>
   <div class= "house_address">
-    <%= house.label :住所 %>
+    <p><%= house.label :住所 %></p>
     <%= house.text_field :address %>
   </div>
   <div class= "house_years">
-    <%= house.label :築年数 %>
-    <%= house.text_field :years %>
+    <p><%= house.label :築年数 %></p>
+    <%= house.text_field :years %>年
   </div>
   <div class= "house_other">
-    <%= house.label :備考 %>
-    <%= house.text_field :other %>
+    <p><%= house.label :備考 %></p>
+    <%= house.text_area :other %>
   </div>
 <% end %>
