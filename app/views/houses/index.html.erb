@@ -11,10 +11,11 @@
   <tr>
     <% @house.each do |house| %>
       <td><%= house.building %></td>
-      <td><%= house.money %></td>
+      <td><%= house.money %>円</td>
       <td><%= house.address %></td>
-      <td><%= house.years %></td>
+      <td><%= house.years %>年</td>
       <td><%= house.other %></td>
+      <td><%= link_to '編集', edit_house_path(house.id) %></td>
     <% end %>
 </table>
 

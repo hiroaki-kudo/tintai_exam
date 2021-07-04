@@ -1,4 +1,4 @@
-<h1>物件登録</h1>
+<h1>物件編集</h1>
 
 <%= form_with(model:@house, local:true) do |house| %>
   <div class= "house_building">
@@ -25,3 +25,4 @@
   <%= house.submit %>
   </div>
 <% end %>
+<%= link_to '戻る', houses_path %>
