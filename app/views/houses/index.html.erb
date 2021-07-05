@@ -15,6 +15,7 @@
         <td><%= house.address %></td>
         <td><%= house.years %>年</td>
         <td><%= house.other %></td>
+        <td><%= link_to '詳細', house_path(house.id) %></td>
         <td><%= link_to '編集', edit_house_path(house.id) %></td>
         <td><%= link_to '削除', house_path(house.id), method: :delete %></td>
       </tr>

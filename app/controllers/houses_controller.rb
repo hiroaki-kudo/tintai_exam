@@ -13,6 +13,9 @@ class HousesController < ApplicationController
       render :new
     end
   end
+  def show
+    @house = House.find(params[:id])
+  end
   def edit
     @house = House.find(params[:id])
   end

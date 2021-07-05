@@ -1,0 +1,14 @@
+<%= form_with(model:@house, local:true) do |house| %>
+  <li><%= house.label :物件名 %></li>
+  <li><%= house.text_field :building %></li>
+  <li><%= house.label :賃料 %></li>
+  <li><%= house.text_field :money %>円</li>
+  <li><%= house.label :住所 %></li>
+  <li><%= house.text_field :address %></li>
+  <li><%= house.label :築年数 %></li>
+  <li><%= house.text_field :years %>年</li>
+  <li><%= house.label :備考 %></li>
+  <li><%= house.text_area :other %></li>
+<% end %>
+<%= link_to '編集', edit_house_path(@house.id) %>
+<%= link_to '戻る', houses_path %>
