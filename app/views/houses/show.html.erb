@@ -1,14 +1,37 @@
 <%= form_with(model:@house, local:true) do |house| %>
-  <li><%= house.label :物件名 %></li>
-  <li><%= house.text_field :building %></li>
-  <li><%= house.label :賃料 %></li>
-  <li><%= house.text_field :money %>円</li>
-  <li><%= house.label :住所 %></li>
-  <li><%= house.text_field :address %></li>
-  <li><%= house.label :築年数 %></li>
-  <li><%= house.text_field :years %>年</li>
-  <li><%= house.label :備考 %></li>
-  <li><%= house.text_area :other %></li>
+<div class= "house_building">
+  <p id="margin_none"><%= house.label :物件名 %></p>
+  <%= house.text_field :building %>
+</div>
+<div class= "house_money">
+  <p id="margin_none"><%= house.label :賃料 %></p>
+  <%= house.text_field :money %>円
+</div>
+<div class= "house_address">
+  <p id="margin_none"><%= house.label :住所 %></p>
+  <%= house.text_field :address %>
+</div>
+<div class= "house_years">
+  <p id="margin_none"><%= house.label :築年数 %></p>
+  <%= house.text_field :years %>年
+</div>
+<div class= "house_other">
+  <p id="margin_none"><%= house.label :備考 %></p>
+  <%= house.text_area :other %>
+</div>
+
+  <% @house.trains.each_with_index do |trains, index| %>
+    <%= house.fields_for :trains, trains do |t| %>
+      <h3>最寄り駅<%= index + 1 %></h3>
+        <%= t.label :路線名 %>
+        <%= t.text_field :line %>
+        <%= t.label :駅名 %>
+        <%= t.text_field :station %>
+        <%= t.label :徒歩分数 %>
+        <%= t.text_field :min %>
+    <% end %>
+  <% end %>
+
 <% end %>
 <%= link_to '編集', edit_house_path(@house.id) %>
 <%= link_to '戻る', houses_path %>

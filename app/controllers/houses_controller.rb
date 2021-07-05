@@ -4,6 +4,7 @@ class HousesController < ApplicationController
   end
   def new
     @house = House.new
+     2.times{@house.trains.build}
   end
   def create
     @house = House.new(house_params)
@@ -34,6 +35,12 @@ class HousesController < ApplicationController
   end
   private
   def house_params
-    params.require(:house).permit(:building, :money, :address, :years, :other)
+    params.require(:house).permit(
+            :building,
+            :money,
+            :address,
+            :years,
+            :other,
+            trains_attributes: [:id,:line,:station,:min, :house_id])
   end
 end
