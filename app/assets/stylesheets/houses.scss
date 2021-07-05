@@ -1,3 +1,24 @@
 #margin_none {
   margin-bottom: 0px;
 }
+
+#margin_up {
+  margin-top: 30px;
+  margin-bottom: 45px;
+}
+
+.line {
+  position:relative;
+  display:inline-block;
+}
+
+.line::after {
+  content:"";
+   display:inline-block;
+   width:1px;
+   height:20px;
+   background-color:#000000;
+   position:absolute;
+   top:2px;
+   right:-3px;
+}
