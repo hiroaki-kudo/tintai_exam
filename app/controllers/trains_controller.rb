@@ -1,0 +1,3 @@
+class TrainsController < ApplicationController
+
+end
